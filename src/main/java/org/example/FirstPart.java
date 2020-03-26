@@ -175,4 +175,15 @@ public class FirstPart {
     return result;
   }
 
+  public static int[] shiftArrayLeft(int[] array) {
+    int firstValue = array[0];
+    for (int i = 0; i < array.length; i++) {
+      if (i == array.length - 1) {
+        array[i] = firstValue;
+      } else {
+        array[i] = array[i + 1];
+      }
+    }
+    return array;
+  }
 }
