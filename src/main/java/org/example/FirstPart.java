@@ -164,4 +164,15 @@ public class FirstPart {
 
   }
 
+  public static boolean checkIfArrayStartAndEndSequenceAreTheSame(int[] array, int sequenceSize) {
+    boolean result = false;
+    for (int i = 0; i < array.length; i++) {
+      if (i >= sequenceSize) {
+        break;
+      }
+      result = array[i] == array[array.length + i - sequenceSize];
+    }
+    return result;
+  }
+
 }
