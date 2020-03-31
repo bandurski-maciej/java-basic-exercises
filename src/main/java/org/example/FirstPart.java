@@ -222,6 +222,27 @@ public class FirstPart {
     }
     return Arrays.copyOfRange(array, max_Begin, max_End);
   }
+
+  public static int findNumberIndexInSortedArray(int[] array, int number) {
+    int difference;
+    int minDifference = 0;
+    int index = 0;
+
+    if (number > array[array.length - 1]) {
+      return array.length;
+    }
+
+    for (int i = 0; i < array.length; i++) {
+      difference = Math.abs(array[i] - number);
+
+      if (difference <= minDifference) {
+        minDifference = Math.abs(difference);
+        index = i;
+      }
+    }
+
+    return index;
+  }
 }
 
 

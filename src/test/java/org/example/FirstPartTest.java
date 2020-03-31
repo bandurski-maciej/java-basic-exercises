@@ -29,5 +29,13 @@ public class FirstPartTest {
     assertThat(new int[]{0, 1, 2}).containsSequence(FirstPart.findContiguousArrayWithBiggestSum(array1));
   }
 
+  @Test
+  public void findNumberIndexInSortedArray() {
+
+    assertThat(0).isEqualTo(FirstPart.findNumberIndexInSortedArray(new int[]{1, 2, 4, 5, 6}, 0));
+    assertThat(3).isEqualTo(FirstPart.findNumberIndexInSortedArray(new int[]{1, 2, 4, 5, 6}, 5));
+    assertThat(5).isEqualTo(FirstPart.findNumberIndexInSortedArray(new int[]{1, 2, 4, 5, 6}, 7));
+  }
+
 }
 
