@@ -20,4 +20,14 @@ public class FirstPartTest {
     assertThat(shiftedArray).containsSequence(FirstPart.shiftArrayLeft(array));
   }
 
+  @Test
+  public void findContiguousArrayWithBiggestSum() {
+    int[] array = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    int[] array1 = new int[]{0, 1, 2, -5};
+
+    assertThat(new int[]{4, -1, 2, 1}).containsSequence(FirstPart.findContiguousArrayWithBiggestSum(array));
+    assertThat(new int[]{0, 1, 2}).containsSequence(FirstPart.findContiguousArrayWithBiggestSum(array1));
+  }
+
 }
+

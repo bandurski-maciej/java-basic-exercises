@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FirstPart {
@@ -198,4 +195,33 @@ public class FirstPart {
     }
 
   }
+
+  public static int[] findContiguousArrayWithBiggestSum(int[] array) {
+    if (array.length < 1) {
+      return new int[0];
+    }
+    int max = array[0];
+    int max_Begin = 0;
+    int max_End = 0;
+    int begin = 0;
+    int end = 0;
+    int sum = 0;
+    while (end < array.length) {
+      sum += array[end];
+      if (sum < 0) {
+        sum = 0;
+        begin = end + 1;
+      } else {
+        if (sum > max) {
+          max = sum;
+          max_Begin = begin;
+          max_End = end;
+        }
+      }
+      end++;
+    }
+    return Arrays.copyOfRange(array, max_Begin, max_End);
+  }
 }
+
+
