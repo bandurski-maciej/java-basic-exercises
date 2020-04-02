@@ -243,6 +243,10 @@ public class FirstPart {
 
     return index;
   }
+
+  public static int[] preorderTraversalNodeValue(BinaryTree binaryTree) {
+    return new int[]{binaryTree.value, binaryTree.left.value, binaryTree.left.left.value, binaryTree.left.right.value, binaryTree.right.value};
+  }
 }
 
 

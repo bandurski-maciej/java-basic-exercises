@@ -37,5 +37,10 @@ public class FirstPartTest {
     assertThat(5).isEqualTo(FirstPart.findNumberIndexInSortedArray(new int[]{1, 2, 4, 5, 6}, 7));
   }
 
+  @Test
+  public void preorderTraversalNodeValue() {
+    assertThat(FirstPart.preorderTraversalNodeValue(new BinaryTree(10, new BinaryTree(20, new BinaryTree(40), new BinaryTree(50)), new BinaryTree(30)))).containsExactly(10, 20, 40, 50, 30);
+  }
+
 }
 
