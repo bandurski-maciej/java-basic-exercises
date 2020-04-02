@@ -35,12 +35,12 @@ public class Patient implements Comparable<Patient> {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (!(o instanceof Patient)) return false;
     Patient patient = (Patient) o;
-    return Objects.equals(name, patient.name) &&
-      Objects.equals(lastName, patient.lastName) &&
-      Objects.equals(age, patient.age) &&
-      Objects.equals(isMale, patient.isMale);
+    return name.equals(patient.name) &&
+      lastName.equals(patient.lastName) &&
+      age.equals(patient.age) &&
+      isMale.equals(patient.isMale);
   }
 
   @Override
