@@ -3,6 +3,7 @@ package org.example;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FirstPartTest {
@@ -40,6 +41,23 @@ public class FirstPartTest {
   @Test
   public void preorderTraversalNodeValue() {
     assertThat(FirstPart.preorderTraversalNodeValue(new BinaryTree(10, new BinaryTree(20, new BinaryTree(40), new BinaryTree(50)), new BinaryTree(30)))).containsExactly(10, 20, 40, 50, 30);
+  }
+
+  @Test
+  public void minimizesPath() {
+    int[][] grid = new int[][]
+      {{7, 4, 2},
+        {0, 5, 6},
+        {3, 1, 2}};
+
+    int[][] grid2 = new int[][]
+      {{7, 0, 2},
+        {1, 5, 6},
+        {3, 1, 2}};
+
+    assertEquals(FirstPart.minimizesPath(grid), 13);
+    assertEquals(FirstPart.minimizesPath(grid2), 17);
+
   }
 
 }

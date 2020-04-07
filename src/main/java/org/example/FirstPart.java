@@ -6,6 +6,13 @@ import java.util.stream.Collectors;
 public class FirstPart {
 
   public static void main(String[] args) {
+
+    int[] nums = {10, 20, 13, 20, 30, 40, 40, 52, 30};
+    int result;
+    System.out.println("Source Array : " + Arrays.toString(nums));
+    result = getSingleNumber(nums);
+    System.out.println("\n" + result + " appears only once.");
+
   }
 
   public static <T, E> T getKeyByValue(Map<T, E> map, E value) {
@@ -246,6 +253,41 @@ public class FirstPart {
 
   public static int[] preorderTraversalNodeValue(BinaryTree binaryTree) {
     return new int[]{binaryTree.value, binaryTree.left.value, binaryTree.left.left.value, binaryTree.left.right.value, binaryTree.right.value};
+  }
+
+
+  public static int getSingleNumber(int[] nums) {
+    if (nums == null || nums.length == 0) {
+      return -1;
+    }
+    int result = 0;
+    for (int num : nums) {
+      result ^= num;
+    }
+    return result;
+  }
+
+  public static int minimizesPath(int[][] grid) {
+    int sum = grid[0][0];
+    int i = 0;
+    int j = 0;
+
+    while (i + j != grid.length * 2 - 2) {
+//      sum += Math.min(grid[i + 1][j], grid[i][j + 1]);
+
+      if (i == grid.length - 1 && j < grid.length) {
+        j++;
+      } else if (j == grid.length - 1) {
+        i++;
+      } else if (grid[i + 1][j] < grid[i][j + 1]) {
+        i++;
+      } else if (grid[i + 1][j] > grid[i][j + 1]) {
+        j++;
+      }
+      sum += grid[i][j];
+    }
+    return sum;
+
   }
 }
 
