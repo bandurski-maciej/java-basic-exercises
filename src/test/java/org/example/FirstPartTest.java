@@ -60,5 +60,18 @@ public class FirstPartTest {
 
   }
 
+  @Test
+  public void shouldReturnSumOfBinaryNumbers() {
+    assertEquals("101", FirstPart.getSumOfBinaryNumbers("10", "11"));
+  }
+
+  @Test
+  public void shouldReturnSumOfBinaryNumbersManually() {
+    assertEquals("101", FirstPart.getSumOfBinaryNumbersManually("10", "11"));
+    assertEquals("1101", FirstPart.getSumOfBinaryNumbersManually("1010", "11"));
+    assertEquals("110001", FirstPart.getSumOfBinaryNumbersManually("10101", "11100"));
+  }
+
+
 }
 

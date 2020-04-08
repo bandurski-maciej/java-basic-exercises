@@ -7,6 +7,9 @@ public class FirstPart {
 
   public static void main(String[] args) {
 
+    int steps = 5;
+    System.out.println("Distinct ways can you climb to the top: " + climbStairs(steps));
+
     int[] nums = {10, 20, 13, 20, 30, 40, 40, 52, 30};
     int result;
     System.out.println("Source Array : " + Arrays.toString(nums));
@@ -273,7 +276,6 @@ public class FirstPart {
     int j = 0;
 
     while (i + j != grid.length * 2 - 2) {
-//      sum += Math.min(grid[i + 1][j], grid[i][j + 1]);
 
       if (i == grid.length - 1 && j < grid.length) {
         j++;
@@ -288,6 +290,74 @@ public class FirstPart {
     }
     return sum;
 
+  }
+
+  public static int climbStairs(int n) {
+    if (n <= 1) {
+      return 1;
+    }
+    int[] s_case = new int[n + 1];
+    s_case[0] = 1;
+    s_case[1] = 1;
+    for (int i = 2; i <= n; i++) {
+      s_case[i] = s_case[i - 1] + s_case[i - 2];
+    }
+    return s_case[n];
+  }
+
+  /**
+   * 17. Java program to add two binary numbers.
+   */
+
+  public static String getSumOfBinaryNumbers(String firstNumber, String secondNumber) {
+
+    int firstNumberInt = Integer.parseInt(firstNumber, 2);
+    int secondNumberInt = Integer.parseInt(secondNumber, 2);
+
+    return Integer.toBinaryString(firstNumberInt + secondNumberInt);
+  }
+
+  public static String getSumOfBinaryNumbersManually(String firstNumber, String secondNumber) {
+    StringBuilder resultBuilder = new StringBuilder();
+    int carry = 0, sum = 0, first = firstNumber.length() - 1, second = secondNumber.length() - 1;
+
+    while (first >= 0 || second >= 0) {
+      if (first >= 0) {
+        sum += Integer.parseInt(String.valueOf(firstNumber.charAt(first)));
+        first--;
+      }
+      if (second >= 0) {
+        sum += Integer.parseInt(String.valueOf(secondNumber.charAt(second)));
+        second--;
+      }
+
+      switch (sum + carry) {
+        case 3:
+          carry = 1;
+          resultBuilder.append('1');
+          break;
+        case 2:
+          carry = 1;
+          resultBuilder.append("0");
+          break;
+        case 1:
+          carry = 0;
+          resultBuilder.append("1");
+          break;
+        case 0:
+          carry = 0;
+          resultBuilder.append("0");
+          break;
+      }
+
+      sum = 0;
+    }
+
+    if (firstNumber.length() == secondNumber.length() && carry == 1) {
+      resultBuilder.append("1");
+    }
+
+    return resultBuilder.reverse().toString();
   }
 }
 
