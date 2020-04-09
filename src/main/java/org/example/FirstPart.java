@@ -415,12 +415,12 @@ public class FirstPart {
    */
 
   public static String getDecimalToOctal(int decimalNumber) {
-    char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7'};
+    char[] octalArray = {'0', '1', '2', '3', '4', '5', '6', '7'};
     int quotient = decimalNumber;
     StringBuilder stringBuilder = new StringBuilder();
 
     while (quotient > 0) {
-      stringBuilder.append(hexadecimalArray[quotient % 8]);
+      stringBuilder.append(octalArray[quotient % 8]);
       quotient = quotient / 8;
     }
 
@@ -447,34 +447,47 @@ public class FirstPart {
    */
 
   public static String getBinaryToHexadecimal(String binaryNumber) {
-    int power = 0, sum = 0, sum2 = 0, power2 = 0;
+    int power = 0, sum = 0;
     char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     StringBuilder stringBuilder = new StringBuilder();
 
-    if (binaryNumber.length() > 4) {
-      for (int i = binaryNumber.length() - 1; i >= 4; i--) {
-        sum2 += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
-        power++;
-      }
+    for (int i = binaryNumber.length() - 1; i >= 0; i--) {
+      sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
+      power++;
 
-      power = 0;
-
-      for (int i = 3; i >= 0; i--) {
-        sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
-        power++;
-      }
-
-      return stringBuilder.append(hexadecimalArray[sum]).append(hexadecimalArray[sum2]).toString();
-
-    } else {
-
-      for (int i = binaryNumber.length() - 1; i >= 0; i--) {
-        sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
-        power++;
+      if (i % 4 == 0) {
+        stringBuilder.append(hexadecimalArray[sum]);
+        sum = 0;
+        power = 0;
       }
     }
 
-    return String.valueOf(hexadecimalArray[sum]);
+
+    return stringBuilder.reverse().toString();
+  }
+
+  /**
+   * 24. Java program to convert a binary number to hexadecimal number.
+   */
+
+  public static String getBinaryToOctal(String binaryNumber) {
+    int power = 0, sum = 0;
+    char[] octalArray = {'0', '1', '2', '3', '4', '5', '6', '7'};
+    StringBuilder stringBuilder = new StringBuilder();
+
+    for (int i = binaryNumber.length() - 1; i >= 0; i--) {
+      sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
+      power++;
+
+      if (i % 3 == 0) {
+        stringBuilder.append(octalArray[sum]);
+        sum = 0;
+        power = 0;
+      }
+    }
+
+
+    return stringBuilder.reverse().toString();
   }
 }
 

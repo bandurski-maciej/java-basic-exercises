@@ -103,5 +103,11 @@ public class FirstPartTest {
     assertEquals("D", FirstPart.getBinaryToHexadecimal("1101"));
     assertEquals("8E", FirstPart.getBinaryToHexadecimal("10001110"));
   }
+
+  @Test
+  public void shouldReturnBinaryToOctal() {
+    assertEquals("7631", FirstPart.getBinaryToOctal("111110011001"));
+
+  }
 }
 
