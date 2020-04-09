@@ -405,6 +405,20 @@ public class FirstPart {
 
     return stringBuilder.reverse().toString();
   }
+
+  public static String getDecimalToOctal(int decimalNumber) {
+    char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7'};
+    int quotient = decimalNumber;
+    StringBuilder stringBuilder = new StringBuilder();
+
+    while (quotient > 0) {
+      stringBuilder.append(hexadecimalArray[quotient % 8]);
+      quotient = quotient / 8;
+    }
+
+    return stringBuilder.reverse().toString();
+  }
+
 }
 
 

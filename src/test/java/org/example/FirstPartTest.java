@@ -87,5 +87,10 @@ public class FirstPartTest {
     assertEquals("F", FirstPart.getDecimalToHexadecimal(15));
     assertEquals("1D8A", FirstPart.getDecimalToHexadecimal(7562));
   }
+
+  @Test
+  public void shouldReturnDecimalToOctal() {
+    assertEquals("17", FirstPart.getDecimalToOctal(15));
+  }
 }
 
