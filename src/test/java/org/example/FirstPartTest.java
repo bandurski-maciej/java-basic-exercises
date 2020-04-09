@@ -72,6 +72,11 @@ public class FirstPartTest {
     assertEquals("110001", FirstPart.getSumOfBinaryNumbersManually("10101", "11100"));
   }
 
+  @Test
+  public void shouldReturnMultiplyBinaryNumbers() {
+    assertEquals("110", FirstPart.multiplyBinaryNumbers("10", "11"));
+  }
+
 
 }
 

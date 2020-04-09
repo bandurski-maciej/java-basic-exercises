@@ -359,6 +359,19 @@ public class FirstPart {
 
     return resultBuilder.reverse().toString();
   }
+
+  /**
+   * 18. Java program to multiply two binary numbers.
+   */
+
+  public static String multiplyBinaryNumbers(String firstNumber, String secondNumber) {
+    int firstBinaryNumber = Integer.parseInt(firstNumber, 2);
+    int secondBinaryNumber = Integer.parseInt(secondNumber, 2);
+
+    return Integer.toBinaryString(firstBinaryNumber * secondBinaryNumber);
+  }
+
+
 }
 
 
