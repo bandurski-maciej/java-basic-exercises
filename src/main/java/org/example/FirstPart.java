@@ -393,6 +393,10 @@ public class FirstPart {
     return stringBuilder.reverse().toString();
   }
 
+  /**
+   * 20. Java program to convert a decimal number to hexadecimal number.
+   */
+
   public static String getDecimalToHexadecimal(int decimalNumber) {
     char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     int quotient = decimalNumber;
@@ -405,6 +409,10 @@ public class FirstPart {
 
     return stringBuilder.reverse().toString();
   }
+
+  /**
+   * 21. Java program to convert a decimal number to octal number.
+   */
 
   public static String getDecimalToOctal(int decimalNumber) {
     char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7'};
@@ -419,6 +427,10 @@ public class FirstPart {
     return stringBuilder.reverse().toString();
   }
 
+  /**
+   * 22. Java program to convert a binary number to decimal number.
+   */
+
   public static int getBinaryToDecimal(String binaryNumber) {
     int power = 0, sum = 0;
 
@@ -428,6 +440,41 @@ public class FirstPart {
     }
 
     return sum;
+  }
+
+  /**
+   * 23. Java program to convert a binary number to hexadecimal number.
+   */
+
+  public static String getBinaryToHexadecimal(String binaryNumber) {
+    int power = 0, sum = 0, sum2 = 0, power2 = 0;
+    char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    StringBuilder stringBuilder = new StringBuilder();
+
+    if (binaryNumber.length() > 4) {
+      for (int i = binaryNumber.length() - 1; i >= 4; i--) {
+        sum2 += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
+        power++;
+      }
+
+      power = 0;
+
+      for (int i = 3; i >= 0; i--) {
+        sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
+        power++;
+      }
+
+      return stringBuilder.append(hexadecimalArray[sum]).append(hexadecimalArray[sum2]).toString();
+
+    } else {
+
+      for (int i = binaryNumber.length() - 1; i >= 0; i--) {
+        sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
+        power++;
+      }
+    }
+
+    return String.valueOf(hexadecimalArray[sum]);
   }
 }
 
