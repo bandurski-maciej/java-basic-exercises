@@ -419,6 +419,16 @@ public class FirstPart {
     return stringBuilder.reverse().toString();
   }
 
+  public static int getBinaryToDecimal(String binaryNumber) {
+    int power = 0, sum = 0;
+
+    for (int i = binaryNumber.length() - 1; i >= 0; i--) {
+      sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
+      power++;
+    }
+
+    return sum;
+  }
 }
 
 

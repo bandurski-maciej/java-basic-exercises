@@ -92,5 +92,10 @@ public class FirstPartTest {
   public void shouldReturnDecimalToOctal() {
     assertEquals("17", FirstPart.getDecimalToOctal(15));
   }
+
+  @Test
+  public void shouldReturnBinaryToDecimal() {
+    assertEquals(5, FirstPart.getBinaryToDecimal("101"));
+  }
 }
 
