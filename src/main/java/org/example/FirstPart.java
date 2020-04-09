@@ -393,6 +393,18 @@ public class FirstPart {
     return stringBuilder.reverse().toString();
   }
 
+  public static String getDecimalToHexadecimal(int decimalNumber) {
+    char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    int quotient = decimalNumber;
+    StringBuilder stringBuilder = new StringBuilder();
+
+    while (quotient > 0) {
+      stringBuilder.append(hexadecimalArray[quotient % 16]);
+      quotient = quotient / 16;
+    }
+
+    return stringBuilder.reverse().toString();
+  }
 }
 
 

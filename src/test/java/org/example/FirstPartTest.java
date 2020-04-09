@@ -81,5 +81,11 @@ public class FirstPartTest {
   public void shouldReturnDecimalToBinary() {
     assertEquals("101", FirstPart.getDecimalToBinary(5));
   }
+
+  @Test
+  public void shouldReturnDecimalToHexadecimal() {
+    assertEquals("F", FirstPart.getDecimalToHexadecimal(15));
+    assertEquals("1D8A", FirstPart.getDecimalToHexadecimal(7562));
+  }
 }
 
