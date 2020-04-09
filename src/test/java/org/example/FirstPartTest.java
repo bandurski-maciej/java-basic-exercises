@@ -77,6 +77,9 @@ public class FirstPartTest {
     assertEquals("110", FirstPart.multiplyBinaryNumbers("10", "11"));
   }
 
-
+  @Test
+  public void shouldReturnDecimalToBinary() {
+    assertEquals("101", FirstPart.getDecimalToBinary(5));
+  }
 }
 

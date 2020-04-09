@@ -371,6 +371,27 @@ public class FirstPart {
     return Integer.toBinaryString(firstBinaryNumber * secondBinaryNumber);
   }
 
+  /**
+   * 19. Java program to convert a decimal number to binary number.
+   */
+
+  public static String getDecimalToBinary(int decimalNumber) {
+    int quotient = decimalNumber;
+    StringBuilder stringBuilder = new StringBuilder();
+
+    while (quotient > 0) {
+
+      if (quotient % 2 == 0) {
+        stringBuilder.append("0");
+      } else {
+        stringBuilder.append("1");
+      }
+
+      quotient = quotient / 2;
+    }
+
+    return stringBuilder.reverse().toString();
+  }
 
 }
 
