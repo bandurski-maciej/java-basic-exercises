@@ -486,9 +486,25 @@ public class FirstPart {
       }
     }
 
-
     return stringBuilder.reverse().toString();
   }
+
+  /**
+   * 25. Java program to convert a octal number to decimal number.
+   */
+
+  public static int convertOctalToDecimal(String octalNumber) {
+    int power = 0, sum = 0;
+
+    for (int i = octalNumber.length() - 1; i >= 0; i--) {
+      sum += Integer.parseInt(String.valueOf(octalNumber.charAt(i))) * Math.pow(8, power);
+      power++;
+
+    }
+    return sum;
+  }
+
+
 }
 
 

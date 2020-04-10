@@ -107,7 +107,11 @@ public class FirstPartTest {
   @Test
   public void shouldReturnBinaryToOctal() {
     assertEquals("7631", FirstPart.getBinaryToOctal("111110011001"));
+  }
 
+  @Test
+  public void shouldConvertOctalToDecimal() {
+    assertEquals(8, FirstPart.convertOctalToDecimal("10"));
   }
 }
 
