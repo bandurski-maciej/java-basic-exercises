@@ -453,15 +453,16 @@ public class FirstPart {
 
     for (int i = binaryNumber.length() - 1; i >= 0; i--) {
       sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
-      power++;
 
-      if (i % 4 == 0) {
+      if ((power % 3 == 0 && power != 0) || i == 0) {
         stringBuilder.append(hexadecimalArray[sum]);
         sum = 0;
-        power = 0;
+        power = -1;
       }
-    }
 
+      power++;
+
+    }
 
     return stringBuilder.reverse().toString();
   }
@@ -479,7 +480,7 @@ public class FirstPart {
       sum += Integer.parseInt(String.valueOf(binaryNumber.charAt(i))) * Math.pow(2, power);
       power++;
 
-      if (i % 3 == 0) {
+      if (power % 3 == 0) {
         stringBuilder.append(octalArray[sum]);
         sum = 0;
         power = 0;
@@ -504,7 +505,21 @@ public class FirstPart {
     return sum;
   }
 
+  /**
+   * 26. Java program to convert a octal number to a binary number.
+   */
 
+  public static String convertOctalToBinary(String octalNumber) {
+    return getDecimalToBinary(convertOctalToDecimal(octalNumber));
+  }
+
+  /**
+   * 27. Java program to convert a octal number to a hexadecimal number.
+   */
+
+  public static String convertOctalToHexadecimal(String octalNumber) {
+    return getBinaryToHexadecimal(convertOctalToBinary(octalNumber));
+  }
 }
 
 

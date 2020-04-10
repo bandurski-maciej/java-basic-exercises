@@ -102,6 +102,7 @@ public class FirstPartTest {
   public void shouldReturnBinaryToHexadecimal() {
     assertEquals("D", FirstPart.getBinaryToHexadecimal("1101"));
     assertEquals("8E", FirstPart.getBinaryToHexadecimal("10001110"));
+    assertEquals("40", FirstPart.getBinaryToHexadecimal("1000000"));
   }
 
   @Test
@@ -112,6 +113,16 @@ public class FirstPartTest {
   @Test
   public void shouldConvertOctalToDecimal() {
     assertEquals(8, FirstPart.convertOctalToDecimal("10"));
+  }
+
+  @Test
+  public void shouldConvertOctalToBinary() {
+    assertEquals("111", FirstPart.convertOctalToBinary("7"));
+  }
+
+  @Test
+  public void shouldConvertOctalToHexadecimal() {
+    assertEquals("40", FirstPart.convertOctalToHexadecimal("100"));
   }
 }
 
