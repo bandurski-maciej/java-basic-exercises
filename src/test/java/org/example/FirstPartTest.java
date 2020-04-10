@@ -124,5 +124,21 @@ public class FirstPartTest {
   public void shouldConvertOctalToHexadecimal() {
     assertEquals("40", FirstPart.convertOctalToHexadecimal("100"));
   }
+
+  @Test
+  public void shouldConvertHexadecimalToDecimal() {
+    assertEquals(37, FirstPart.convertHexadecimalToDecimal("25"));
+    assertEquals(89838, FirstPart.convertHexadecimalToDecimal("15EEE"));
+  }
+
+  @Test
+  public void shouldConvertHexadecimalToBinary() {
+    assertEquals("110111", FirstPart.convertHexadecimalToBinary("37"));
+  }
+
+  @Test
+  public void shouldConvertHexadecimalToOctal() {
+    assertEquals("100", FirstPart.convertHexadecimalToOctal("40"));
+  }
 }
 

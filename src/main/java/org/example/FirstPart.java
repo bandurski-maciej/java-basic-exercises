@@ -520,6 +520,41 @@ public class FirstPart {
   public static String convertOctalToHexadecimal(String octalNumber) {
     return getBinaryToHexadecimal(convertOctalToBinary(octalNumber));
   }
+
+  /**
+   * 28. Java program to convert a hexadecimal to a decimal number.
+   */
+
+  public static int convertHexadecimalToDecimal(String hexadecimalNumber) {
+    char[] hexadecimalArray = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    int sum = 0, power = 0;
+    for (int i = hexadecimalNumber.length() - 1; i >= 0; i--) {
+      for (int j = 0; j < hexadecimalArray.length; j++) {
+        if (hexadecimalNumber.charAt(i) == hexadecimalArray[j]) {
+          sum += j * Math.pow(16, power);
+          power++;
+        }
+      }
+    }
+
+    return sum;
+  }
+
+  /**
+   * 29. Java program to convert a hexadecimal to a decimal number.
+   */
+
+  public static String convertHexadecimalToBinary(String hexadecimalNumber) {
+    return getDecimalToBinary(convertHexadecimalToDecimal(hexadecimalNumber));
+  }
+
+  /**
+   * 30. Java program to convert a hexadecimal to a octal number.
+   */
+
+  public static String convertHexadecimalToOctal(String hexadecimalNumber) {
+    return getDecimalToOctal(convertHexadecimalToDecimal(hexadecimalNumber));
+  }
 }
 
 
