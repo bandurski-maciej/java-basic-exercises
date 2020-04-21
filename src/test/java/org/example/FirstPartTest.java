@@ -160,5 +160,16 @@ public class FirstPartTest {
   public void findGreatestCommonDivisor() {
     assertEquals(FirstPart.findGreatestCommonDivisor(282, 78), 6);
   }
+
+  @Test
+  public void moveZerosToTheRight() {
+    assertThat(FirstPart.moveZerosToTheRight(new int[]{0, 3, 4, 0, 1, 2, 5, 0})).contains(3, 4, 1, 2, 5, 0, 0, 0);
+  }
+
+  @Test
+  public void reverseWordsOrder() {
+    assertEquals(FirstPart
+      .reverseWordsOrder("The quick brown fox jumps over the lazy dog"), "dog lazy the over jumps fox brown quick The");
+  }
 }
 

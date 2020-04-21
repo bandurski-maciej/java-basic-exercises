@@ -613,7 +613,49 @@ public class FirstPart {
     }
     return max;
   }
+
+
+  /**
+   * 167. Write a Java program to move every zero to the right side of a given array of integers.
+   */
+
+  public static int[] moveZerosToTheRight(int[] array) {
+    int[] result = new int[array.length];
+    int zeroCounter = 0;
+
+    for (int i = 0; i < array.length; i++) {
+      if (array[i] != 0) {
+        result[i - zeroCounter] = array[i];
+      } else {
+        zeroCounter++;
+      }
+    }
+
+    for (int i = array.length - zeroCounter; i < array.length; i++) {
+      result[i] = 0;
+    }
+
+    return result;
+  }
+
+  /**
+   * 169. Write a Java program to reverse the content of a sentence (assume a single space between two words) without reverse every word.
+   */
+
+  public static String reverseWordsOrder(String sentence) {
+    StringBuilder stringBuilder = new StringBuilder();
+    String[] words = sentence.split(" ");
+
+    for (int i = words.length - 1; i >= 0; i--) {
+      stringBuilder.append(words[i]);
+      if (i != 0) {
+        stringBuilder.append(" ");
+      }
+    }
+    return stringBuilder.toString();
+  }
 }
+
 
 
 
