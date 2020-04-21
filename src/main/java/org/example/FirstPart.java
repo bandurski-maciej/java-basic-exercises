@@ -599,6 +599,20 @@ public class FirstPart {
     return returnArray;
   }
 
+  /**
+   * 157. Write a Java program to prove that Euclid’s algorithm computes the greatest common divisor of two positive given integers.
+   */
+
+  public static int findGreatestCommonDivisor(int i, int i1) {
+    int max = Math.max(i, i1), min = Math.min(i, i1), modulo = max;
+
+    while (modulo > 0) {
+      modulo = max % min;
+      max = min;
+      min = modulo;
+    }
+    return max;
+  }
 }
 
 

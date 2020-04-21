@@ -155,5 +155,10 @@ public class FirstPartTest {
   public void changeArrayRowsWithColumns() {
     assertThat(FirstPart.changeArrayRowsWithColumns(new int[][]{{10, 20, 30}, {40, 50, 60}})).contains(new int[][]{{10, 40}, {20, 50}, {30, 60}});
   }
+
+  @Test
+  public void findGreatestCommonDivisor() {
+    assertEquals(FirstPart.findGreatestCommonDivisor(282, 78), 6);
+  }
 }
 
