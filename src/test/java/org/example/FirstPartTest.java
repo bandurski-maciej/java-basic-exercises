@@ -140,5 +140,20 @@ public class FirstPartTest {
   public void shouldConvertHexadecimalToOctal() {
     assertEquals("100", FirstPart.convertHexadecimalToOctal("40"));
   }
+
+  @Test
+  public void shouldGetPreorderTraversalOfTree() {
+    BinaryTree tree = new BinaryTree(10);
+    tree.right = new BinaryTree(30);
+    tree.left = new BinaryTree(20);
+    tree.left.left = new BinaryTree(40);
+    tree.left.right = new BinaryTree(50);
+    FirstPart.getPreorderTraversalOfTree(tree);
+  }
+
+  @Test
+  public void changeArrayRowsWithColumns() {
+    assertThat(FirstPart.changeArrayRowsWithColumns(new int[][]{{10, 20, 30}, {40, 50, 60}})).contains(new int[][]{{10, 40}, {20, 50}, {30, 60}});
+  }
 }
 

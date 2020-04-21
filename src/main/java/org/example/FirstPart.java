@@ -555,6 +555,51 @@ public class FirstPart {
   public static String convertHexadecimalToOctal(String hexadecimalNumber) {
     return getDecimalToOctal(convertHexadecimalToDecimal(hexadecimalNumber));
   }
+
+  /**
+   * 125. Java program to convert a hexadecimal to a octal number.
+   */
+
+  public static void getPreorderTraversalOfTree(BinaryTree binaryTree) {
+
+
+    if (binaryTree != null) {
+      System.out.print(binaryTree.value + " ");
+
+      if (binaryTree.left != null) {
+        System.out.print(binaryTree.left.value + " ");
+      } else {
+        System.out.print("-" + " ");
+      }
+
+      if (binaryTree.right != null) {
+        System.out.print(binaryTree.right.value + " ");
+      } else {
+        System.out.print("-" + " ");
+      }
+
+      getPreorderTraversalOfTree(binaryTree.left);
+      getPreorderTraversalOfTree(binaryTree.right);
+    }
+  }
+
+  /**
+   * 155. Write a Java program to print an array after changing the rows and columns of a given two-dimensional array.
+   */
+
+  public static int[][] changeArrayRowsWithColumns(int[][] array) {
+    int[][] returnArray = new int[array[0].length][array.length];
+
+    for (int i = 0; i < array.length; i++) {
+      for (int j = 0; j < array[i].length; j++) {
+        returnArray[j][i] = array[i][j];
+      }
+    }
+
+    return returnArray;
+  }
+
 }
+
 
 
