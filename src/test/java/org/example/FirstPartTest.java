@@ -3,8 +3,7 @@ package org.example;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FirstPartTest {
 
@@ -170,6 +169,12 @@ public class FirstPartTest {
   public void reverseWordsOrder() {
     assertEquals(FirstPart
       .reverseWordsOrder("The quick brown fox jumps over the lazy dog"), "dog lazy the over jumps fox brown quick The");
+  }
+
+  @Test
+  public void checkIfStrobogrammatic() {
+    assertTrue(FirstPart.checkIfStrobogrammatic("181"));
+    assertFalse(FirstPart.checkIfStrobogrammatic("121"));
   }
 }
 

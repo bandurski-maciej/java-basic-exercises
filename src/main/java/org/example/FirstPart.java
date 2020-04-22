@@ -654,6 +654,33 @@ public class FirstPart {
     }
     return stringBuilder.toString();
   }
+
+  /**
+   * 186. Write a Java program to check if a number is a strobogrammatic number. The number is represented as a string.
+   */
+
+  public static boolean checkIfStrobogrammatic(String number) {
+    Map<Character, Character> characterMap = new HashMap<>();
+    int start = 0, end = number.length() - 1;
+    boolean flag = true;
+
+    characterMap.put('0', '0');
+    characterMap.put('1', '1');
+    characterMap.put('8', '8');
+    characterMap.put('6', '9');
+    characterMap.put('9', '6');
+
+    while (end >= start) {
+      if (!characterMap.containsKey(number.charAt(start)) || number.charAt(start) != characterMap.get(number.charAt(end))) {
+        flag = false;
+      }
+      end--;
+      start++;
+    }
+
+    return flag;
+  }
+
 }
 
 
